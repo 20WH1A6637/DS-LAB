@@ -33,3 +33,18 @@ int LinearSearch1(int a[],int n,int key, int i){
     i += 1;
     return LinearSearch1(a, n, key, i);
 }
+/*OUTPUT
+
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:5
+Enter the elements of the array:2 3 6 8 5
+enter the value or key to search:3
+Element is found at 1 position
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:6
+Enter the elements of the array: 7 8 9 5 6 2
+enter the value or key to search:10
+Element is not found
+cse@dbcselab:~/Desktop/20wh1a6637$ 
+
+*/
