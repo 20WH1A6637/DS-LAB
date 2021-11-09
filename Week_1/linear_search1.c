@@ -24,11 +24,12 @@ void readArray(int a[], int n){
     }
 }
 int LinearSearch1(int a[],int n,int key, int i){
-    if(i > n){
-        return -1;
-    }
-    else if(a[i] == key){
+    if(a[i] == key){
         return i;
     }
-    return LinearSearch1(a, n, key, i++);
+    else if(i > n){
+        return -1;
+    }
+    i += 1;
+    return LinearSearch1(a, n, key, i);
 }
