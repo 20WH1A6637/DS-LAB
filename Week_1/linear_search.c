@@ -31,3 +31,19 @@ int LinearSearch(int a[],int n,int key){
         }
     }return -1;
 }
+
+/*OUTPUT
+
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:6
+Enter the elements of the array:1 8 3 9 6 2 
+enter the value or key to search:9
+Element is found at 3 position
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:5
+Enter the elements of the array:41 52 63 98 74
+enter the value or key to search:100
+Element is not found
+cse@dbcselab:~/Desktop/20wh1a6637$ 
+
+*/
