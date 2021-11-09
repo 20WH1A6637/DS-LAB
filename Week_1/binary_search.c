@@ -2,7 +2,7 @@
 int binarySearch(int[],int,int,int);
 void readArray(int[], int);
 int main(){
-    int n,ele,low,high;
+    int n,x,low,high;
     int result;
     printf("enter the no of elements of the array:");
     scanf("%d",&n);
@@ -42,3 +42,18 @@ int binarySearch(int a[],int key,int low,int high){
     }
   return -1;
 }
+
+/*
+cse@dbcselab:~/Desktop/20wh1a6637$ gcc binary_search.c
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:5
+Enter the elements of the array:1 2 3 4 5
+enter the value or key to search:4
+element is found at 3 position
+cse@dbcselab:~/Desktop/20wh1a6637$ ./a.out
+enter the no of elements of the array:5
+Enter the elements of the array:1 2 3 4 5 
+enter the value or key to search:6
+element is not found
+cse@dbcselab:~/Desktop/20wh1a6637$ 
+*/
