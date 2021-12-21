@@ -63,7 +63,7 @@ int main(){
                 break;
             case 3:
                 if(top == NULL){
-                    printf("Stack overflow\n");
+                    printf("Stack underflow\n");
                 }
                 else{
                     printf("Top element : %d\n", peek());
