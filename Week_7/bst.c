@@ -1,3 +1,7 @@
+#include<stdio.h>
+struct node{
+	int data;
+	struct node *left;
 	struct node *right;
 };
 
@@ -21,7 +25,7 @@ struct node* create(){
 			}
 			else if(cur->data < temp->data && temp->left != NULL){
 				temp = temp->left;
-				
+
 			}
 			else if(cur->data >temp->data && temp->right == NULL){
 	  			temp->right = cur;
@@ -29,10 +33,10 @@ struct node* create(){
 			}
 			else if(cur->data > temp->data && temp->right != NULL){
 				temp = temp->right;
-		
+
 			}
 		}
-	} 
+	}
 }
 
 void preorder(struct node *root){
@@ -81,7 +85,7 @@ int main(){
 			case 5:
 				exit(0);
 		}
-	}	
+	}
 
 }
 
