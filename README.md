@@ -9,3 +9,5 @@ Week 4 - Implementing stacks using array and single linked list.
 Week 5 - Circular single linked list.
 Week 6 - Implementing queues using arrays and single linked list.
 Week 7 - Creating a bst and traversing (preorder, inorder, postorder).
+Week 8 - Sorting methods (bubble sort, insertion sort, selection sort)
+Week 9 - Graph Traversal methods (DFS, BFS)
