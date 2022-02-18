@@ -14,7 +14,7 @@ struct node* create(){
     printf("Enter the value to be entered into the data of the node:\n ");
     for(int i = 0; i < n; i++){
         cur = (struct node*)malloc(sizeof(struct node));
-        scanf("%d", &cur->data);
+        scanf("%d", &(cur->data));
         if(head == NULL){
             cur->link = cur;
             head = cur;
@@ -23,10 +23,9 @@ struct node* create(){
             temp = head;
             while(temp->link != head){
                 temp = temp->link;
-                temp->link = cur;
-                cur->link = head;
             }
-        temp->link = cur;
+            temp->link = cur;
+            cur->link = head;
         }
     }
     return head;
@@ -35,7 +34,7 @@ struct node* create(){
 struct node* insert_begin(int ele){
     cur = (struct node*)malloc(sizeof(struct node));
     cur->data = ele;
-    cur->link = head;
+    temp = head;
     while(temp->link != head){
         temp = temp->link;
     }
@@ -48,7 +47,7 @@ struct node* insert_begin(int ele){
 struct node* insert_end(int ele){
     cur = (struct node*)malloc(sizeof(struct node));
     cur->data = ele;
-    cur->link = head;
+    temp = head;
     while(temp->link != head){
         temp = temp->link;
     }
@@ -73,14 +72,6 @@ struct node* insert_pos(int pos, int ele){
 
 struct node* delete_begin(struct node* head){
     temp = head;
-    head = temp->link;
-    printf("deleted element %d\n", temp->data);
-    free(temp);
-    return head;
-}
-
-struct node* delete_end(struct node* head){
-    temp = head;
     while(temp->link != head){
         temp = temp->link;
     }
@@ -88,6 +79,19 @@ struct node* delete_end(struct node* head){
     head = temp1->link;
     printf("deleted element %d\n", temp1->data);
     free(temp1);
+    return head;
+}
+
+struct node* delete_end(struct node* head){
+    temp = head;
+    temp1 = head;
+    while(temp->link != head){
+        temp1 = temp;
+        temp = temp->link;
+    }
+    temp1->link = temp->link;
+    printf("deleted element %d\n", temp->data);
+    free(temp);
     return head;
 }
 
@@ -99,7 +103,7 @@ struct node* delete_pos(struct node* head, int pos){
         temp = temp->link;
         c++;
     }
-   temp1->link = temp->link;
+    temp1->link = temp->link;
     printf("deleted element %d\n",temp->data);
     free(temp);
     return head;
@@ -107,10 +111,11 @@ struct node* delete_pos(struct node* head, int pos){
 
 void display(struct node* head){
     temp = head;
-    while(temp->link != head){
-        printf("%d \n", (temp->data));
-        temp = temp->link;
-    }
+    do{  
+        printf("%d ", temp->data);  
+        temp = temp->link;  
+    }while(temp != head);  
+    printf("\n");  
 }
 
 int main(){
@@ -125,23 +130,26 @@ int main(){
                 break;
             case 2:printf("Enter the element to be inserted: ");
                 scanf("%d", &ele);
-                insert_begin(ele);
+                head = insert_begin(ele);
                 break;
             case 3:printf("Enter the element to be inserted: ");
                 scanf("%d", &ele);
-                insert_end(ele);
+                head = insert_end(ele);
                 break;
             case 4:printf("Enter the element to be inserted: ");
                 scanf("%d", &ele);
                 printf("Enter the position: ");
                 scanf("%d", &pos);
-                insert_pos(pos , ele);
+                head = insert_pos(pos , ele);
                 break;
-            case 5:head = delete_begin(head);
+            case 5:
+                head = delete_begin(head);
                 break;
-            case 6:head = delete_end(head);
+            case 6:
+                head = delete_end(head);
                 break;
-            case 7:printf("Enter the position\n");
+            case 7:
+                printf("Enter the position\n");
                 scanf("%d", &pos);
                 head = delete_pos(head, pos);
                 break;
